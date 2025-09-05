@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { Badge } from '$lib/components/ui/badge/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import * as Card from '$lib/components/ui/card/index.js';
-	import { SquareArrowOutUpRight, Star } from 'lucide-svelte';
 	import type { PageProps } from './$types';
-	import { Badge } from '$lib/components/ui/badge/index.js';
+	import SquareArrowOutUpRight from '@lucide/svelte/icons/square-arrow-out-up-right';
+	import Star from '@lucide/svelte/icons/star';
 
 	let { data }: PageProps = $props();
 	const { repos, user } = data;
