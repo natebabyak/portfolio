@@ -6,6 +6,7 @@
 	import { Moon, Sun } from 'lucide-svelte';
 	import * as NavigationMenu from '$lib/components/ui/navigation-menu/index.js';
 	import { resetMode, setMode } from 'mode-watcher';
+	import { navigationMenuTriggerStyle } from '../ui/navigation-menu/navigation-menu-trigger.svelte';
 </script>
 
 <header class="flex justify-between p-4">
@@ -26,10 +27,11 @@
 					</NavigationMenu.Content>
 				</NavigationMenu.Item>
 				<NavigationMenu.Item>
-					<NavigationMenu.Trigger>Contact</NavigationMenu.Trigger>
-					<NavigationMenu.Content>
-						<NavigationMenu.Link>Link</NavigationMenu.Link>
-					</NavigationMenu.Content>
+					<NavigationMenu.Link>
+						{#snippet child()}
+							<a href="/contact" class={navigationMenuTriggerStyle()}>Contact</a>
+						{/snippet}
+					</NavigationMenu.Link>
 				</NavigationMenu.Item>
 			</NavigationMenu.List>
 		</NavigationMenu.Root>
