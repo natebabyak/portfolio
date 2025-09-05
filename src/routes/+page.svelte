@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { name } from '$lib/data.json';
 </script>
 
 <svelte:head>
-	<title>Home - {name}</title>
+	<title>Home -</title>
 </svelte:head>
 
 <h1>Welcome to SvelteKit</h1>

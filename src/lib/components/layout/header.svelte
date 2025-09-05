@@ -3,10 +3,11 @@
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 	import Github from '$lib/components/icons/github.svelte';
 	import Logo from '$lib/components/icons/logo.svelte';
-	import { Moon, Sun } from 'lucide-svelte';
+	import Moon from '@lucide/svelte/icons/moon';
 	import * as NavigationMenu from '$lib/components/ui/navigation-menu/index.js';
-	import { resetMode, setMode } from 'mode-watcher';
 	import { navigationMenuTriggerStyle } from '../ui/navigation-menu/navigation-menu-trigger.svelte';
+	import { resetMode, setMode } from 'mode-watcher';
+	import Sun from '@lucide/svelte/icons/sun';
 </script>
 
 <header class="flex justify-between p-4">
