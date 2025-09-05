@@ -2,6 +2,6 @@
 	const year = new Date().getFullYear();
 </script>
 
-<footer>
-	<p>&copy; {year} Nate Babyak. All rights reserved.</p>
+<footer class="w-full p-4 text-center">
+	&copy; {year} Nate Babyak. All rights reserved.
 </footer>

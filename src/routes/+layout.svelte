@@ -1,6 +1,8 @@
 <script lang="ts">
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
+	import Footer from '$lib/components/layout/footer.svelte';
+	import Header from '$lib/components/layout/header.svelte';
 	import { ModeWatcher } from 'mode-watcher';
 
 	let { children } = $props();
@@ -11,4 +13,6 @@
 </svelte:head>
 
 <ModeWatcher />
+<Header />
 {@render children?.()}
+<Footer />
