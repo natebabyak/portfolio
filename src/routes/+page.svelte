@@ -1,8 +1,12 @@
 <script lang="ts">
+	import type { PageProps } from './$types';
+
+	let { data }: PageProps = $props();
+	const { repos, user } = data;
 </script>
 
 <svelte:head>
-	<title>Home -</title>
+	<title>Home - {user.name}</title>
 </svelte:head>
 
 <h1>Welcome to SvelteKit</h1>

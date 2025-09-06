@@ -2,9 +2,9 @@
 	const { class: className }: { class?: string } = $props();
 </script>
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" class={className}>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class={className}>
 	<path
-		d="M 0 500 C 0 500, 500 500, 500 0 C 500 0, 500 500, 1000 500 C 1000 500, 500 500, 500 1000 C 500 1000, 500 500, 0 500"
-		fill="currentColor"
+		d="M 0 10 C 0 10, 10 10, 10 0 C 10 0, 10 10, 20 10 C 20 10, 10 10, 10 20 C 10 20, 10 10, 0 10"
+		fill="#fff"
 	/>
 </svg>

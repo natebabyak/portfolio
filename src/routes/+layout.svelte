@@ -4,8 +4,10 @@
 	import Footer from '$lib/components/layout/footer.svelte';
 	import Header from '$lib/components/layout/header.svelte';
 	import { ModeWatcher } from 'mode-watcher';
+	import type { LayoutProps } from './$types';
 
-	let { children } = $props();
+	let { data, children }: LayoutProps = $props();
+	const { repos, user } = data;
 </script>
 
 <svelte:head>
@@ -13,6 +15,8 @@
 </svelte:head>
 
 <ModeWatcher />
-<Header />
-{@render children?.()}
+<Header {repos} {user} />
+<main class="pt-20">
+	{@render children?.()}
+</main>
 <Footer />
