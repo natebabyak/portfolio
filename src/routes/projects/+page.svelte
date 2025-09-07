@@ -55,11 +55,11 @@
 	<title>Projects - {user.login}</title>
 </svelte:head>
 
-<div class="mx-auto flex w-full max-w-2xl flex-col gap-8 px-4 md:px-0">
+<div class="mx-auto w-full max-w-3xl px-4 md:px-0">
 	<h1>Projects</h1>
 	<p>Description</p>
 	{#each filteredRepos as repo}
-		<Card.Root>
+		<Card.Root id={repo.name}>
 			<Card.Header>
 				<Card.Title>{repo.name}</Card.Title>
 				<Card.Description>{repo.description}</Card.Description>
@@ -91,7 +91,7 @@
 				<div class="flex w-full gap-2">
 					{#if repo.homepage}
 						<Button href={repo.homepage} target="_blank">
-							View Live
+							View
 							<SquareArrowOutUpRight />
 						</Button>
 					{/if}
@@ -106,12 +106,6 @@
 					{repo.language}
 				</Badge>
 			</Card.Content>
-			<Card.Footer class="flex justify-end">
-				<Button href={`/projects/${repo.name}`} variant="ghost">
-					Learn More
-					<ChevronRight />
-				</Button>
-			</Card.Footer>
 		</Card.Root>
 	{/each}
 </div>

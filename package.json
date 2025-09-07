@@ -44,6 +44,8 @@
 	},
 	"dependencies": {
 		"@octokit/rest": "^22.0.0",
+		"isomorphic-dompurify": "^2.26.0",
+		"marked": "^16.2.1",
 		"mode-watcher": "^1.1.0"
 	}
 }
