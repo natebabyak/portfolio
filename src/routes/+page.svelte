@@ -1,2 +1,25 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script lang="ts">
+	import Footer from '$lib/components/footer.svelte';
+	import Header from '$lib/components/header.svelte';
+</script>
+
+<Header />
+<main>
+	<article>
+		<h1>Nate Babyak</h1>
+		<p>Hi, I'm Nate Babyak</p>
+		<section>
+			<h2>Projects</h2>
+		</section>
+		<section>
+			<h2>Experience</h2>
+		</section>
+		<section>
+			<h2>Education</h2>
+		</section>
+		<section>
+			<h2>Contact</h2>
+		</section>
+	</article>
+</main>
+<Footer />
