@@ -1,51 +1,43 @@
 <script lang="ts">
-	import * as Card from '$lib/components/ui/card/index.js';
+	import Education from '$lib/components/education.svelte';
+	import Experience from '$lib/components/experience.svelte';
 	import Footer from '$lib/components/footer.svelte';
 	import Header from '$lib/components/header.svelte';
-
-	interface ProjectProps {
-		title: string;
-		description: string;
-		content: string;
-	}
-
-	const projects: ProjectProps[] = [];
+	import Project from '$lib/components/project.svelte';
+	import { educations, experiences, projects } from '$lib/portfolio';
+	import { Timeline } from 'svelte-vertical-timeline';
 </script>
 
-{#snippet project(projectProps: ProjectProps)}
-	<Card.Root>
-		<Card.Header>
-			<Card.Title>{projectProps.title}</Card.Title>
-			<Card.Description>{projectProps.description}</Card.Description>
-		</Card.Header>
-		<Card.Content>
-			<p>{projectProps.content}</p>
-		</Card.Content>
-		<Card.Footer>
-			<p>Card Footer</p>
-		</Card.Footer>
-	</Card.Root>
-{/snippet}
-
 <Header />
-<main>
-	<article>
-		<p class="text-lg">
-			I'm Nate Babyak, a software engineer who enjoys turning data into software others find
-			genuinely useful.
+<main class="pt-17">
+	<article class="mx-auto max-w-3xl px-4 md:px-0">
+		<p class="mt-8 leading-loose text-balance">
+			I'm Nate Babyak, a software engineer who builds data-driven software with performance and
+			usability in mind.
 		</p>
 		<section>
-			<h2 id="projects" class="text-3xl">Projects</h2>
-			<ul>
-				{#each projects as projectProps}
-					<li>
-						{@render project(projectProps)}
-					</li>
+			<h2 id="projects" class="mt-8 text-xl font-medium">Projects</h2>
+			<div class="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-2">
+				{#each projects as project}
+					<Project {project} />
 				{/each}
-			</ul>
+			</div>
 		</section>
 		<section>
-			<h2 id="contact" class="text-3xl">Contact</h2>
+			<h2 id="experience" class="mt-8 text-xl font-medium">Experience</h2>
+			<Timeline position="alternate">
+				{#each experiences as experience}
+					<Experience {experience} />
+				{/each}
+			</Timeline>
+		</section>
+		<section>
+			<h2 id="education" class="mt-8 text-xl font-medium">Education</h2>
+			<Timeline position="alternate">
+				{#each educations as education}
+					<Education {education} />
+				{/each}
+			</Timeline>
 		</section>
 	</article>
 </main>

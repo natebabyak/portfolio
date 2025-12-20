@@ -9,6 +9,10 @@
 <svelte:head>
 	<link rel="icon" href={favicon} />
 	<title>Nate Babyak</title>
+	<description>
+		I'm Nate Babyak, a software engineer who builds data-driven software with performance and
+		usability in mind.
+	</description>
 </svelte:head>
 <ModeWatcher />
 {@render children()}

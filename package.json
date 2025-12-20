@@ -43,6 +43,8 @@
 		"vite": "^7.2.6"
 	},
 	"dependencies": {
-		"mode-watcher": "^1.1.0"
+		"@selemondev/svgl-svelte": "^2.0.4",
+		"mode-watcher": "^1.1.0",
+		"svelte-vertical-timeline": "^2.0.0"
 	}
 }
