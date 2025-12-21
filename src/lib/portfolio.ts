@@ -47,7 +47,7 @@ export const projects: Project[] = [
 	{
 		title: 'Job Application Tracker',
 		githubSlug: 'job-application-tracker',
-		description: 'Track and optimize your job search from a single, powerful dashboard',
+		description: 'A web app to manage and visualize your job applications in a single dashboard.',
 		technologies: [
 			{
 				icon: NextjsLogo,
@@ -78,7 +78,8 @@ export const projects: Project[] = [
 		title: 'Skyrocket',
 		demoUrl: 'https://strong-douhua-4d2cb0.netlify.app',
 		githubSlug: 'skyrocket',
-		description: 'A real-time stock market analyzer for Hypixel SkyBlock',
+		description:
+			'A web app that analyzes a virtual stock market in real time, recommending buys, sells, and optimal currency exchanges.',
 		technologies: [
 			{
 				icon: SvelteLogo,
@@ -102,7 +103,7 @@ export const projects: Project[] = [
 		title: 'markte',
 		demoUrl: 'https://markte.vercel.app',
 		githubSlug: 'markte',
-		description: 'A free and open-source live-preview Markdown editor built with Svelte',
+		description: 'A Markdown editor with live preview for instantly seeing formatted content.',
 		technologies: [
 			{
 				icon: SvelteLogo,
@@ -125,7 +126,7 @@ export const projects: Project[] = [
 	{
 		title: 'LaTeXdex',
 		githubSlug: 'latexdex',
-		description: 'A searchable database of community-contributed LaTeX snippets and templates',
+		description: 'A searchable database of community-contributed LaTeX snippets and templates.',
 		technologies: [
 			{
 				icon: NextjsLogo,
@@ -148,7 +149,8 @@ export const projects: Project[] = [
 		title: 'sketch-guesser',
 		demoUrl: 'https://sketch-guesser.vercel.app',
 		githubSlug: 'sketch-guesser',
-		description: 'In-browser sketch-guessing game made with Transformers.js',
+		description:
+			'An in-browser game where users draw sketches and the app predicts what they are using AI.',
 		technologies: [
 			{
 				icon: HuggingFaceLogo,
@@ -176,7 +178,8 @@ export const projects: Project[] = [
 		title: 'ChatSLM',
 		demoUrl: 'https://smollm2-chatbot.vercel.app',
 		githubSlug: 'smollm2-chatbot',
-		description: 'A fully in-browser chatbot application',
+		description:
+			'An in-browser chatbot application that lets users interact with an AI model in real time.',
 		technologies: [
 			{
 				icon: HuggingFaceLogo,
@@ -209,7 +212,7 @@ export const experiences: Experience[] = [
 		role: 'Junior Data Analyst / Developer',
 		organization: 'Employment and Social Development Canada',
 		summary:
-			'Contribute to data-driven labour market tools by preparing and analyzing datasets and supporting software development using Java, Python, JavaScript, and relational databases.'
+			'Prepare and analyze datasets to support labour market tools, while contributing to software development using Java, Python, JavaScript, and relational databases.'
 	},
 	{
 		startDate: 'July 2025',
@@ -217,7 +220,7 @@ export const experiences: Experience[] = [
 		role: 'Associate Technician',
 		organization: 'EssilorLuxottica',
 		summary:
-			'Processed high-volume production orders while automating tracking and analyzing operational data to improve turnaround time and document workflows.'
+			'Processed high-volume production orders and automated data tracking to improve turnaround time and workflow efficiency.'
 	},
 	{
 		startDate: 'July 2024',
@@ -225,7 +228,7 @@ export const experiences: Experience[] = [
 		role: 'Statistical Assistant',
 		organization: 'Statistics Canada',
 		summary:
-			'Digitized and validated large-scale survey data, cleaning and standardizing datasets to ensure high data quality and processing accuracy.'
+			'Digitized, cleaned, and validated large-scale survey data to ensure high quality and processing accuracy.'
 	},
 	{
 		startDate: 'May 2024',
@@ -233,7 +236,7 @@ export const experiences: Experience[] = [
 		role: 'Processing Operator',
 		organization: 'Statistics Canada',
 		summary:
-			'Processed and validated large-scale census data with high accuracy while improving workflow efficiency through tracking and process improvements.'
+			'Processed and validated large-scale census data with accuracy while improving workflow efficiency through process tracking.'
 	}
 ];
 
