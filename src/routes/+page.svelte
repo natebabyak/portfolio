@@ -1,69 +1,98 @@
 <script lang="ts">
-	import Education from '$lib/components/education.svelte';
-	import Experience from '$lib/components/experience.svelte';
-	import Footer from '$lib/components/footer.svelte';
-	import Header from '$lib/components/header.svelte';
-	import Project from '$lib/components/project.svelte';
+	import Education from '$lib/components/page/education.svelte';
+	import Experience from '$lib/components/page/experience.svelte';
+	import Footer from '$lib/components/layout/footer.svelte';
+	import Header from '$lib/components/layout/header.svelte';
+	import Project from '$lib/components/page/project.svelte';
 	import { educations, experiences, projects } from '$lib/portfolio';
-	import { onMount } from 'svelte';
 	import { Timeline } from 'svelte-vertical-timeline';
+	import { Separator } from '$lib/components/ui/separator/index.js';
+	import SectionTitle from '$lib/components/page/section-title.svelte';
+	import SectionDescription from '$lib/components/page/section-description.svelte';
+	import { cn } from '$lib/utils';
 
-	let sm = $state(false);
+	let isAtTop = $state(true);
 
-	onMount(() => {
-		const handleResize = () => {
-			sm = window.innerWidth >= 640;
-		};
-		handleResize();
-		window.addEventListener('resize', handleResize);
-		return () => window.removeEventListener('resize', handleResize);
-	});
+	function handleScroll() {
+		isAtTop = window.scrollY <= 0;
+	}
 </script>
 
+<svelte:window onscroll={handleScroll} />
+
 <Header />
-<main class="pt-17">
-	<article class="mx-auto max-w-3xl px-4">
-		<p class="mt-8 leading-loose text-balance">
-			I'm Nate Babyak, a software engineer who builds data-driven software with performance and
-			usability in mind.
-		</p>
+<main class="relative pt-17.25">
+	<div
+		class={cn(
+			'pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-size-[64px_64px] transition-opacity duration-500 dark:bg-[linear-gradient(to_right,#27272a_1px,transparent_1px),linear-gradient(to_bottom,#27272a_1px,transparent_1px)]',
+			isAtTop ? 'opacity-0' : 'opacity-100'
+		)}
+	></div>
+	<div
+		class={cn(
+			'pointer-events-none absolute inset-0 animate-[pulse-a_8s_ease-in-out_infinite] bg-[radial-gradient(ellipse_70%_50%_at_15%_30%,rgb(99_102_241/0.1),transparent_70%)] transition-opacity duration-500',
+			isAtTop ? 'opacity-0' : 'opacity-100'
+		)}
+	></div>
+	<div
+		class={cn(
+			'pointer-events-none absolute inset-0 animate-[pulse-b_11s_ease-in-out_infinite] bg-[radial-gradient(ellipse_60%_50%_at_85%_70%,rgb(20_184_166/0.08),transparent_70%)] transition-opacity duration-500',
+			isAtTop ? 'opacity-0' : 'opacity-100'
+		)}
+	></div>
+	<article
+		class={cn(
+			'relative mx-auto flex max-w-3xl flex-col gap-8 border-x bg-background px-4 py-8 transition-colors duration-500',
+			isAtTop && 'border-transparent'
+		)}
+	>
 		<section>
-			<h2 id="projects" class="mt-8 text-xl font-medium">Projects</h2>
+			<SectionTitle id="about">About</SectionTitle>
+			<SectionDescription>
+				I'm a curious problem-solver who loves learning new things and turning ideas into tools that
+				people find genuinely useful
+			</SectionDescription>
+		</section>
+		<Separator />
+		<section>
+			<SectionTitle id="projects">Projects</SectionTitle>
 			<div class="mt-2 grid grid-cols-1 gap-4 sm:grid-cols-2">
-				{#each projects as project}
+				{#each projects as project, i (i)}
 					<Project {project} />
 				{/each}
 			</div>
 		</section>
+		<Separator />
 		<section>
-			<h2 id="experience" class="mt-8 text-xl font-medium">Experience</h2>
+			<SectionTitle id="experience">Experience</SectionTitle>
 			<div class="hidden sm:block">
 				<Timeline position="alternate">
-					{#each experiences as experience}
+					{#each experiences as experience, i (i)}
 						<Experience {experience} />
 					{/each}
 				</Timeline>
 			</div>
 			<div class="left-0 flex justify-start sm:hidden">
-				<Timeline position="right" style="width: 200%; margin-left: -50%; ">
-					{#each experiences as experience}
+				<Timeline position="right" style="width: 200%; margin-left: -50%;">
+					{#each experiences as experience, i (i)}
 						<Experience {experience} />
 					{/each}
 				</Timeline>
 			</div>
 		</section>
+		<Separator />
 		<section>
-			<h2 id="education" class="mt-8 text-xl font-medium">Education</h2>
+			<SectionTitle id="education">Education</SectionTitle>
 			<div class="hidden sm:block">
 				<Timeline position="alternate">
-					{#each educations as education}
+					{#each educations as education, i (i)}
 						<Education {education} />
 					{/each}
 				</Timeline>
 			</div>
 			<div class="left-0 flex justify-start sm:hidden">
-				<Timeline position="right" style="width: 200%; margin-left: -50%; ">
-					{#each educations as education}
+				<Timeline position="right" style="width: 200%; margin-left: -50%;">
+					{#each educations as education, i (i)}
 						<Education {education} />
 					{/each}
 				</Timeline>

@@ -1,15 +1,14 @@
 import {
+	AmazonWebServicesLogo,
 	BetterAuthLogo,
 	DockerLogo,
+	DrizzleORMLogo,
 	FastAPILogo,
-	HuggingFaceLogo,
 	NextjsLogo,
 	PostgreSQLLogo,
-	PythonLogo,
 	ReactLogo,
-	ShadcnuiLogo,
+	SupabaseLogo,
 	SvelteLogo,
-	TailwindCSSLogo,
 	TypeScriptLogo,
 	ViteLogo
 } from '@selemondev/svgl-svelte';
@@ -21,33 +20,81 @@ export interface Technology {
 }
 
 export interface Project {
-	title: string;
-	demoUrl?: string;
-	githubSlug: string;
+	name: string;
 	description: string;
+	url: string;
 	technologies: Technology[];
 }
 
 export interface Experience {
+	name: string;
+	position: string;
 	startDate: string;
 	endDate: string;
-	role: string;
-	organization: string;
 	summary: string;
 }
 
 export interface Education {
+	institution: string;
 	startDate: string;
 	endDate: string;
-	institution: string;
 	degree: string;
 }
 
 export const projects: Project[] = [
 	{
-		title: 'Job Application Tracker',
-		githubSlug: 'job-application-tracker',
-		description: 'A web app to manage and visualize your job applications in a single dashboard.',
+		name: 'cuGuessr',
+		description:
+			'A mobile-first geography guessing game set on the Carleton University campus, featuring a daily challenge and the ability to upload custom photos, inspired by GeoGuessr.',
+		url: 'https://cuguessr.com',
+		technologies: [
+			{
+				icon: NextjsLogo,
+				name: 'Next.js'
+			},
+			{
+				icon: ReactLogo,
+				name: 'React'
+			},
+			{
+				icon: TypeScriptLogo,
+				name: 'TypeScript'
+			},
+			{
+				icon: SupabaseLogo,
+				name: 'Supabase'
+			},
+			{
+				icon: PostgreSQLLogo,
+				name: 'PostgreSQL'
+			}
+		]
+	},
+	{
+		name: 'Skyrocket',
+		description:
+			'A real-time stock market analysis tool that provides actionable insights, including buy/sell recommendations and optimal currency exchange strategies.',
+		url: 'https://skyrocket-tools.netlify.app',
+		technologies: [
+			{
+				icon: SvelteLogo,
+				name: 'Svelte'
+			},
+			{
+				icon: TypeScriptLogo,
+				name: 'TypeScript'
+			},
+			{
+				icon: ViteLogo,
+				name: 'Vite'
+			}
+		]
+	},
+	{
+		name: 'Job Application Tracker',
+		description:
+			'A centralized dashboard to track, manage, and visualize job applications, streamlining the job search process.',
+		url: 'https://github.com/natebabyak/job-application-tracker',
 		technologies: [
 			{
 				icon: NextjsLogo,
@@ -58,10 +105,6 @@ export const projects: Project[] = [
 				name: 'FastAPI'
 			},
 			{
-				icon: PythonLogo,
-				name: 'Python'
-			},
-			{
 				icon: PostgreSQLLogo,
 				name: 'PostgreSQL'
 			},
@@ -70,63 +113,16 @@ export const projects: Project[] = [
 				name: 'Docker'
 			},
 			{
+				icon: AmazonWebServicesLogo,
 				name: 'AWS'
 			}
 		]
 	},
 	{
-		title: 'Skyrocket',
-		demoUrl: 'https://strong-douhua-4d2cb0.netlify.app',
-		githubSlug: 'skyrocket',
+		name: 'LaTeXdex',
 		description:
-			'A web app that analyzes a virtual stock market in real time, recommending buys, sells, and optimal currency exchanges.',
-		technologies: [
-			{
-				icon: SvelteLogo,
-				name: 'Svelte'
-			},
-			{
-				icon: TypeScriptLogo,
-				name: 'TypeScript'
-			},
-			{
-				icon: ViteLogo,
-				name: 'Vite'
-			},
-			{
-				icon: TailwindCSSLogo,
-				name: 'Tailwind CSS'
-			}
-		]
-	},
-	{
-		title: 'markte',
-		demoUrl: 'https://markte.vercel.app',
-		githubSlug: 'markte',
-		description: 'A Markdown editor with live preview for instantly seeing formatted content.',
-		technologies: [
-			{
-				icon: SvelteLogo,
-				name: 'Svelte'
-			},
-			{
-				icon: TypeScriptLogo,
-				name: 'TypeScript'
-			},
-			{
-				icon: ViteLogo,
-				name: 'Vite'
-			},
-			{
-				icon: TailwindCSSLogo,
-				name: 'Tailwind CSS'
-			}
-		]
-	},
-	{
-		title: 'LaTeXdex',
-		githubSlug: 'latexdex',
-		description: 'A searchable database of community-contributed LaTeX snippets and templates.',
+			'A collaborative platform offering a searchable database of LaTeX snippets and templates for academic and professional use.',
+		url: 'https://github.com/natebabyak/latexdex',
 		technologies: [
 			{
 				icon: NextjsLogo,
@@ -137,6 +133,7 @@ export const projects: Project[] = [
 				name: 'BetterAuth'
 			},
 			{
+				icon: DrizzleORMLogo,
 				name: 'Drizzle ORM'
 			},
 			{
@@ -144,99 +141,41 @@ export const projects: Project[] = [
 				name: 'PostgreSQL'
 			}
 		]
-	},
-	{
-		title: 'sketch-guesser',
-		demoUrl: 'https://sketch-guesser.vercel.app',
-		githubSlug: 'sketch-guesser',
-		description:
-			'An in-browser game where users draw sketches and the app predicts what they are using AI.',
-		technologies: [
-			{
-				icon: HuggingFaceLogo,
-				name: 'Hugging Face'
-			},
-			{
-				icon: NextjsLogo,
-				name: 'Next.js'
-			},
-			{
-				icon: ReactLogo,
-				name: 'React'
-			},
-			{
-				icon: TypeScriptLogo,
-				name: 'TypeScript'
-			},
-			{
-				icon: ShadcnuiLogo,
-				name: 'shadcn/ui'
-			}
-		]
-	},
-	{
-		title: 'ChatSLM',
-		demoUrl: 'https://smollm2-chatbot.vercel.app',
-		githubSlug: 'smollm2-chatbot',
-		description:
-			'An in-browser chatbot application that lets users interact with an AI model in real time.',
-		technologies: [
-			{
-				icon: HuggingFaceLogo,
-				name: 'Hugging Face'
-			},
-			{
-				icon: NextjsLogo,
-				name: 'Next.js'
-			},
-			{
-				icon: ReactLogo,
-				name: 'React'
-			},
-			{
-				icon: TypeScriptLogo,
-				name: 'TypeScript'
-			},
-			{
-				icon: ShadcnuiLogo,
-				name: 'shadcn/ui'
-			}
-		]
 	}
 ];
 
 export const experiences: Experience[] = [
 	{
+		name: 'Employment and Social Development Canada',
+		position: 'Junior Data Analyst / Developer',
 		startDate: 'January 2026',
 		endDate: 'Present',
-		role: 'Junior Data Analyst / Developer',
-		organization: 'Employment and Social Development Canada',
 		summary:
-			'Prepare and analyze datasets to support labour market tools, while contributing to software development using Java, Python, JavaScript, and relational databases.'
+			'Developed an internal data lake platform for regional analysts, streamlining access to datasets and saving significant time through Python GUI automation for ETL pipelines and a Svelte-based frontend.'
 	},
 	{
+		name: 'EssilorLuxottica',
+		position: 'Associate Technician',
 		startDate: 'July 2025',
 		endDate: 'August 2025',
-		role: 'Associate Technician',
-		organization: 'EssilorLuxottica',
 		summary:
-			'Processed high-volume production orders and automated data tracking to improve turnaround time and workflow efficiency.'
+			'Optimized high-volume production workflows by automating data tracking systems, significantly improving turnaround times and operational efficiency.'
 	},
 	{
+		name: 'Statistics Canada',
+		position: 'Statistical Assistant',
 		startDate: 'July 2024',
 		endDate: 'August 2024',
-		role: 'Statistical Assistant',
-		organization: 'Statistics Canada',
 		summary:
-			'Digitized, cleaned, and validated large-scale survey data to ensure high quality and processing accuracy.'
+			'Ensured the integrity of large-scale survey data by digitizing, cleaning, and validating datasets for high-quality analysis.'
 	},
 	{
+		name: 'Statistics Canada',
+		position: 'Processing Operator',
 		startDate: 'May 2024',
 		endDate: 'July 2024',
-		role: 'Processing Operator',
-		organization: 'Statistics Canada',
 		summary:
-			'Processed and validated large-scale census data with accuracy while improving workflow efficiency through process tracking.'
+			'Enhanced census data processing accuracy and efficiency by implementing process tracking improvements.'
 	}
 ];
 

@@ -46,6 +46,7 @@
 	"dependencies": {
 		"@selemondev/svgl-svelte": "^2.0.4",
 		"mode-watcher": "^1.1.0",
+		"svelte-inview": "^4.0.4",
 		"svelte-vertical-timeline": "^2.0.0"
 	}
 }

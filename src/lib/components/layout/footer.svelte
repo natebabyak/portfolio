@@ -1,10 +1,12 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
+
 	const year = new Date().getFullYear();
 </script>
 
-<footer class="flex flex-col gap-4 py-8 text-center text-sm text-muted-foreground">
+<footer class="flex flex-col gap-4 border-t py-8 text-center text-sm text-muted-foreground">
 	<p class="gap-2 underline-offset-4">
-		<a href="/" class="hover:underline">natebabyak.com</a>
+		<a href={resolve('/')} class="hover:underline">natebabyak.com</a>
 		&bull;
 		<a href="mailto:nate.babyak@outlook.com" class="hover:underline">nate.babyak@outlook.com</a>
 		&bull;
