@@ -31,7 +31,7 @@ export interface Experience {
 	position: string;
 	startDate: string;
 	endDate: string;
-	summary: string;
+	summary?: string;
 }
 
 export interface Education {
@@ -157,25 +157,19 @@ export const experiences: Experience[] = [
 		name: 'EssilorLuxottica',
 		position: 'Associate Technician',
 		startDate: 'July 2025',
-		endDate: 'August 2025',
-		summary:
-			'Optimized high-volume production workflows by automating data tracking systems, significantly improving turnaround times and operational efficiency.'
+		endDate: 'August 2025'
 	},
 	{
 		name: 'Statistics Canada',
 		position: 'Statistical Assistant',
 		startDate: 'July 2024',
-		endDate: 'August 2024',
-		summary:
-			'Ensured the integrity of large-scale survey data by digitizing, cleaning, and validating datasets for high-quality analysis.'
+		endDate: 'August 2024'
 	},
 	{
 		name: 'Statistics Canada',
 		position: 'Processing Operator',
 		startDate: 'May 2024',
-		endDate: 'July 2024',
-		summary:
-			'Enhanced census data processing accuracy and efficiency by implementing process tracking improvements.'
+		endDate: 'July 2024'
 	}
 ];
 

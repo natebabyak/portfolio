@@ -43,9 +43,11 @@
 			</p>
 			<h3 class="text-lg font-semibold">{experience.position}</h3>
 			<h4 class="mt-1 text-sm text-muted-foreground">{experience.name}</h4>
-			<p class="mt-3 text-sm text-balance text-muted-foreground">
-				{experience.summary}
-			</p>
+			{#if experience.summary}
+				<p class="mt-3 text-sm text-balance text-muted-foreground">
+					{experience.summary}
+				</p>
+			{/if}
 		</div>
 	</TimelineContent>
 </TimelineItem>
