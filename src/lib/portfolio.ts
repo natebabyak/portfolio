@@ -71,10 +71,10 @@ export const projects: Project[] = [
 		]
 	},
 	{
-		name: 'Skyrocket',
+		name: 'SkyFlip',
 		description:
 			'A real-time stock market analysis tool that provides actionable insights, including buy/sell recommendations and optimal currency exchange strategies.',
-		url: 'https://skyrocket-tools.netlify.app',
+		url: 'https://skyflip.netlify.app',
 		technologies: [
 			{
 				icon: SvelteLogo,
