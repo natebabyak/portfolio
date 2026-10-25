@@ -1,8 +1,14 @@
 <script lang="ts">
   import { resolve } from "$app/paths";
-  import { IconArrowUpRight, IconCopy, IconSlash } from "@tabler/icons-svelte";
+  import { motion } from "@humanspeak/svelte-motion";
+  import {
+    IconArrowUpRight,
+    IconBrandGithub,
+    IconBrandX,
+    IconMail,
+    IconSlash,
+  } from "@tabler/icons-svelte";
 
-  import * as ButtonGroup from "#lib/components/ui/button-group/index.ts";
   import { Button } from "#lib/components/ui/button/index.ts";
 </script>
 
@@ -34,13 +40,29 @@
     class="mx-auto w-full max-w-lg flex-1 space-y-16 *:space-y-2 [&_h2]:text-lg [&_h2]:font-medium"
   >
     <section id="hero">
-      <h1 class="mb-8 text-xl font-medium">Hey, I'm Nate.</h1>
-      <p>
+      <motion.h1
+        initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+        transition={{ delay: 0.3, duration: 0.7, ease: "circIn" }}
+        class="mb-8 text-xl font-medium"
+      >
+        Hey, I'm Nate.
+      </motion.h1>
+      <motion.p
+        initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+        transition={{ delay: 0.5, duration: 0.7, ease: "circIn" }}
+      >
         I'm a software engineer based in Canada. I enjoy building things that solve my own problems,
         exploring new ideas, and sometimes just having fun.
-      </p>
+      </motion.p>
     </section>
-    <section id="cuguessr">
+    <motion.section
+      id="cuguessr"
+      initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+      animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+      transition={{ delay: 1.5, duration: 1, ease: "circIn" }}
+    >
       <h2>cuGuessr</h2>
       <p>
         Daily photo guessing game set on the Carleton University campus with 1,000+ peak daily
@@ -55,12 +77,17 @@
         cuguessr.com
         <IconArrowUpRight />
       </Button>
-    </section>
-    <section id="pyivt">
+    </motion.section>
+    <motion.section
+      id="pyivt"
+      initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+      animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+      transition={{ delay: 1.6, duration: 1, ease: "circIn" }}
+    >
       <h2>pyivt</h2>
       <p>
-        Reverse engineered a proprietary file format, enabling automated extraction of 14,000+
-        files, written in Rust.
+        Reverse engineered a proprietary file format, enabling automated extraction of 14,000+ files
+        at blazing speed.
       </p>
       <Button
         href="https://pypi.org/project/pyivt/"
@@ -71,23 +98,42 @@
         View on PyPI
         <IconArrowUpRight />
       </Button>
-    </section>
-    <section id="contact">
+    </motion.section>
+    <motion.section
+      id="contact"
+      initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+      animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+      transition={{ delay: 1.7, duration: 1, ease: "circIn" }}
+    >
       <h2>Contact</h2>
-      <ButtonGroup.Root>
-        <Button
-          href="mailto:nate.babyak@outlook.com"
-          rel="noopener noreferrer"
-          target="_blank"
-          variant="outline"
-        >
-          nate.babyak@outlook.com
-        </Button>
-        <Button size="icon" variant="outline">
-          <IconCopy />
-        </Button>
-      </ButtonGroup.Root>
-    </section>
+      <Button
+        href="mailto:nate.babyak@outlook.com"
+        rel="noopener noreferrer"
+        target="_blank"
+        variant="outline"
+      >
+        <IconMail />
+        nate.babyak@outlook.com
+      </Button>
+      <Button
+        href="https://github.com/natebabyak"
+        rel="noopener noreferrer"
+        target="_blank"
+        variant="outline"
+      >
+        <IconBrandGithub />
+        @natebabyak
+      </Button>
+      <Button
+        href="https://x.com/natebabyak"
+        rel="noopener noreferrer"
+        target="_blank"
+        variant="outline"
+      >
+        <IconBrandX />
+        @natebabyak
+      </Button>
+    </motion.section>
   </main>
   <footer>
     <p class="text-muted-foreground text-center text-sm">
