@@ -12,7 +12,7 @@
   import { Button } from "#lib/components/ui/button/index.ts";
 </script>
 
-<div class="flex min-h-svh flex-col space-y-8 py-16">
+<div class="flex min-h-svh flex-col space-y-8 py-16 *:px-4">
   <header class="mx-auto flex w-full max-w-lg items-center gap-2">
     <Button href={resolve("/")} variant="link" class="px-0!">babyak.dev</Button>
     <IconSlash size={16} />
@@ -106,33 +106,35 @@
       transition={{ delay: 1.7, duration: 1, ease: "circIn" }}
     >
       <h2>Contact</h2>
-      <Button
-        href="mailto:nate.babyak@outlook.com"
-        rel="noopener noreferrer"
-        target="_blank"
-        variant="outline"
-      >
-        <IconMail />
-        nate.babyak@outlook.com
-      </Button>
-      <Button
-        href="https://github.com/natebabyak"
-        rel="noopener noreferrer"
-        target="_blank"
-        variant="outline"
-      >
-        <IconBrandGithub />
-        @natebabyak
-      </Button>
-      <Button
-        href="https://x.com/natebabyak"
-        rel="noopener noreferrer"
-        target="_blank"
-        variant="outline"
-      >
-        <IconBrandX />
-        @natebabyak
-      </Button>
+      <div class="flex flex-wrap gap-1">
+        <Button
+          href="mailto:nate.babyak@outlook.com"
+          rel="noopener noreferrer"
+          target="_blank"
+          variant="outline"
+        >
+          <IconMail />
+          nate.babyak@outlook.com
+        </Button>
+        <Button
+          href="https://github.com/natebabyak"
+          rel="noopener noreferrer"
+          target="_blank"
+          variant="outline"
+        >
+          <IconBrandGithub />
+          @natebabyak
+        </Button>
+        <Button
+          href="https://x.com/natebabyak"
+          rel="noopener noreferrer"
+          target="_blank"
+          variant="outline"
+        >
+          <IconBrandX />
+          @natebabyak
+        </Button>
+      </div>
     </motion.section>
   </main>
   <footer>
