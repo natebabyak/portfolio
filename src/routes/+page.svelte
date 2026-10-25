@@ -6,8 +6,11 @@
     IconBrandGithub,
     IconBrandX,
     IconMail,
+    IconMoon,
     IconSlash,
+    IconSun,
   } from "@tabler/icons-svelte";
+  import { toggleMode } from "mode-watcher";
 
   import { Button } from "#lib/components/ui/button/index.ts";
 </script>
@@ -35,6 +38,19 @@
     >
       X
     </Button>
+    <Button
+      onclick={() => {
+        console.log("Hello??");
+        toggleMode();
+      }}
+      size="icon"
+      title="Toggle mode"
+      variant="ghost"
+      class="ml-auto"
+    >
+      <IconSun class="scale-100 rotate-0 transition-all! dark:scale-0 dark:-rotate-90" />
+      <IconMoon class="absolute scale-0 rotate-90 transition-all! dark:scale-100 dark:rotate-0" />
+    </Button>
   </header>
   <main
     class="mx-auto w-full max-w-lg flex-1 space-y-16 *:space-y-2 [&_h2]:text-lg [&_h2]:font-medium"
@@ -42,16 +58,16 @@
     <section id="hero">
       <motion.h1
         initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-        transition={{ delay: 0.3, duration: 0.7, ease: "circIn" }}
+        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        transition={{ delay: 0.3, duration: 0.7, ease: "easeOut" }}
         class="mb-8 text-xl font-medium"
       >
         Hey, I'm Nate.
       </motion.h1>
       <motion.p
         initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-        animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-        transition={{ delay: 0.5, duration: 0.7, ease: "circIn" }}
+        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        transition={{ delay: 0.5, duration: 0.7, ease: "easeOut" }}
       >
         I'm a software engineer based in Canada. I enjoy building things that solve my own problems,
         exploring new ideas, and sometimes just having fun.
@@ -59,9 +75,9 @@
     </section>
     <motion.section
       id="cuguessr"
-      initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-      animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-      transition={{ delay: 1.5, duration: 1, ease: "circIn" }}
+      initial={{ opacity: 0, filter: "blur(4px)" }}
+      animate={{ opacity: 1, filter: "blur(0px)" }}
+      transition={{ delay: 1.5, duration: 0.5, ease: "easeOut" }}
     >
       <h2>cuGuessr</h2>
       <p>
@@ -80,9 +96,9 @@
     </motion.section>
     <motion.section
       id="pyivt"
-      initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-      animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-      transition={{ delay: 1.6, duration: 1, ease: "circIn" }}
+      initial={{ opacity: 0, filter: "blur(4px)" }}
+      animate={{ opacity: 1, filter: "blur(0px)" }}
+      transition={{ delay: 1.6, duration: 0.5, ease: "easeOut" }}
     >
       <h2>pyivt</h2>
       <p>
@@ -101,9 +117,9 @@
     </motion.section>
     <motion.section
       id="contact"
-      initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-      animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-      transition={{ delay: 1.7, duration: 1, ease: "circIn" }}
+      initial={{ opacity: 0, filter: "blur(4px)" }}
+      animate={{ opacity: 1, filter: "blur(0px)" }}
+      transition={{ delay: 1.7, duration: 0.5, ease: "easeOut" }}
     >
       <h2>Contact</h2>
       <div class="flex flex-wrap gap-1">
